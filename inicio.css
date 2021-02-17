@@ -1,0 +1,94 @@
+#iniciarSesion{
+    margin-top: 50px; 
+    text-align:center;
+}
+#loginForm{
+    margin-top: 80px; 
+    width:350px; 
+    padding: 20px; 
+    border-radius:10px; 
+    border:1px solid #000; 
+    margin:auto; 
+    background-color:#EDF5E1; 
+}
+#loginForm label{
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin-bottom: 15px;
+}
+#loginForm section{
+    display:flex;
+}
+#loginForm section label{
+    justify-content: center; 
+    margin-right: 10px; 
+    margin-left: 20px; 
+    margin-bottom: 20px; 
+    padding: 12px;
+}
+#loginForm section input{
+    align-items: center; 
+    margin-right: 10px; 
+    margin-bottom: 20px; 
+    padding: 12px;
+}
+
+.botonForm{
+    cursor:pointer; 
+    width:45%; 
+    padding:8px 16px; 
+    margin-top:16px; 
+    border:1px solid #000; 
+    border-radius:5px; 
+    display:block; 
+    color:#fff; 
+    background-color:#05386B;
+}
+
+.botonRegistrarse{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;    
+    float: none;
+    cursor:pointer; 
+    width:45%; 
+    padding:8px 16px; 
+    border:1px solid #000; 
+    border-radius:5px; 
+    color:#fff; 
+    background-color:#05386B;
+}
+
+header{
+    background: rgba(0,0,0,0.9);
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+nav{
+    float: left; /* Desplazamos el nav hacia la izquierda */
+}
+   
+nav ul{
+    list-style: none;
+    overflow: hidden; /* Limpiamos errores de float */
+}
+   
+nav ul li{
+    float: left;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+   
+nav ul li a{
+    display: block; /* Convertimos los elementos a en elementos bloque para manipular el padding */
+    padding: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+   
+nav ul li:hover{
+    background: #05386B;
+}

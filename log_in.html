@@ -1,0 +1,65 @@
+<html>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.js"></script>
+    <script>
+        function iniciarsesion(){
+            var resultado = true;
+            var usuario = $('#cuenta').val();
+            var contra = $('#clave').val();
+            
+            var datosRegistro = {
+                "usuario" : usuario,
+                "password" : contra,
+            };
+            
+            $.ajax({
+                url: "inicio.php",
+                type: "POST",
+                data: JSON.stringify(datosRegistro),
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function(res) {
+                    //console.log(res);
+                    alert(res.message);
+                    window.location.href = "index.html";
+                },
+                error: function(res) {
+                    //var obj = $.parseJSON(res);
+                    //convertir el objeto JSON a texto
+                    var json_string = JSON.stringify(res);
+                    console.log("Error: " + json_string);
+                    //convertir el texto a un nuevo objeto
+                    alert("Error: ");
+                }
+            });
+            return;
+         };
+    </script>
+    <head>
+        <meta charset="utf-8">
+        <link href="inicio.css" rel="stylesheet" type="text/css">
+        <title>Log_in</title>
+    </head>
+    <body>
+        <div id='iniciarSesion'>
+            <h2>Bienvenido</h2>
+        </div>
+        <br>
+        <div>
+            <form id='loginForm' name="loginForm" method='post'>
+                <label><img src='img/LoginForm/usuarioprin.jpg' alt="Imagen de inicio"/></label>
+                <section>
+                    <label><img src='img/LoginForm/usuario.jpg' alt="Imagen de usuario"/></label>
+                    <input id='cuenta' name='cuenta' type='text' placeholder='Usuario' value=''/>
+                </section>
+                <section>
+                    <label><img src='img/LoginForm/contrasena.jpg' alt="Imagen de contraseña"/></label>
+                    <input id='clave' name='clave' type='password' placeholder='Contraseña' value=''/>
+                </section>
+                <section>
+                    <input class='botonForm' style='margin-right:10%; float:left;' type='button' onclick='iniciarsesion()' value='Iniciar_sesión'/>
+                    <input class='botonForm' type='button' value='Registrarse' onclick="location.href='registrarse.html'">
+                </section>
+            </form>
+        </div>
+    </body>
+</html>
